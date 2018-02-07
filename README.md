@@ -1,9 +1,3 @@
-# ionic-fn2rjm
-
-[Edit this project on StackBlitz](https://stackblitz.com/edit/ionic-fn2rjm)
-
-This is a starter template for [Ionic](http://ionicframework.com/docs/) projects.
-
 ## How to use this template with the Ionic CLI:
 
 First you need to run `npm install`.
