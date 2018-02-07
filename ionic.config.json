@@ -1,0 +1,8 @@
+{
+  "name": "ionic-fn2rjm",
+  "app_id": "",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}

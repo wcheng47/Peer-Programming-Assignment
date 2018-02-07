@@ -1,0 +1,11 @@
+<form (ngSubmit)="onSubmit(linkForm)" #linkForm="ngForm">
+  <ion-item>
+    <ion-label> Link URL: </ion-label>
+    <ion-input [(ngModel)] = "linkURL" type="text" name="linkURL"></ion-input>
+  </ion-item>
+  <button ion-button type="submit" value="Submit Link!">Submit Link!</button>
+  <ion-item>
+    <ion-label> Shortened Link: </ion-label>
+    <ion-input [(ngModel)] = "shortenedLink" type="text" name="shortenedLinkURL"></ion-input>
+  </ion-item>
+</form>
