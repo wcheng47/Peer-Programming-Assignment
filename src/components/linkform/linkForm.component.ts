@@ -4,9 +4,9 @@ import {Injectable} from "@angular/core";
 
 import {NgForm} from "@angular/forms";
 
-import {LinkModel} from "../models/link.models";
+import {LinkModel} from "../../models/link.models";
 
-import {LinkService} from "../services/link.services";
+import {LinkService} from "../../services/link.services";
 
 @Component({
   selector: "link-form",
@@ -18,15 +18,14 @@ export class LinkFormClass {
   linkURL = "";
   shortenedLink = "";
   link:LinkModel;
-  
+
   constructor(private linkService:LinkService) {
 
   }
 
-  onSubmit(linkForm:NgForm) {
-    this.link = new LinkModel(this.linkURL);
-    this.linkService.readLink(this.link.linkURL);
+  async onSubmit(linkForm:NgForm) {
+    let lm: LinkModel = await this.linkService.createLink(this.link.linkURL);
     linkForm.reset();
   }
-  
+
 }

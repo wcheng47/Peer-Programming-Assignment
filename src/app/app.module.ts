@@ -12,7 +12,8 @@ import { TabsPage } from '../pages/tabs/tabs';
 
 import {LinkService} from '../services/link.services';
 
-import {LinkFormClass} from "../components/linkForm.component";
+import {LinkFormClass} from "../components/linkform/linkForm.component";
+import {LinkListClass} from "../components/link-list/link-list.component"
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import {LinkFormClass} from "../components/linkForm.component";
     ContactPage,
     HomePage,
     TabsPage,
-    LinkFormClass
+    LinkFormClass,
+    LinkListClass
   ],
   imports: [
     BrowserModule,
