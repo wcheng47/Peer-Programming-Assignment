@@ -24,7 +24,7 @@ export class LinkFormClass {
   }
 
   async onSubmit(linkForm:NgForm) {
-    let lm: LinkModel = await this.linkService.createLink(this.link.linkURL);
+    let lm: LinkModel = await this.linkService.createLink(this.linkURL);
     linkForm.reset();
   }
 

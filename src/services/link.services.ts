@@ -6,7 +6,7 @@ import 'rxjs/add/operator/map'
 
 @Injectable()
 export class LinkService {
-  configUrl: string = 'http://link-api.pramodk.net';
+  public configUrl: string = 'http://link-api.pramodk.net';
 
   constructor(private http: HttpClient) {
   }
@@ -16,7 +16,7 @@ export class LinkService {
     return this.http.post<LinkResponse>(this.configUrl + '/api/link/create/', {
       long_url: linkURL,
     })
-      .pipe<LinkModel>((response: LinkResponse) => {
+      .map((response: LinkResponse) => {
         new LinkModel(response.long_url, response.short_url_id)
       })
       .toPromise();
