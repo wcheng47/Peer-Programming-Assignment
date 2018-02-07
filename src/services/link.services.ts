@@ -12,25 +12,14 @@ export class LinkService {
   }
 
   // Long URL -> Short URL
-  createLink(linkURL: String): Promise<LinkResponse> {
+  createLink(linkURL: String): Promise<LinkModel> {
     return this.http.post<LinkResponse>(this.configUrl + '/api/link/create/', {
       long_url: linkURL,
     })
       .map((response: LinkResponse) => {
-        new LinkModel(response.long_url, response.short_url_id)
+        return new LinkModel(response.long_url, response.short_url_id)
       })
       .toPromise();
-  }
-
-  // Short URL -> Long URL
-  readLink(linkURL: String): LinkModel {
-    var lm: LinkModel = new LinkModel(linkURL);
-    console.log(this.configUrl);
-    console.log('linkURL');
-    this.http.get(this.configUrl + '/api/link/resolve/' + linkURL + '/').subscribe(data => {
-      console.log(data);
-    });
-    return lm;
   }
 
   // Returns a list of Link Objects
