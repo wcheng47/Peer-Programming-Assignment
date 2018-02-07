@@ -17,7 +17,6 @@ import {LinkService} from "../../services/link.services";
 export class LinkFormClass {
   linkURL = "";
   shortenedLink = "";
-  link:LinkModel;
 
   constructor(private linkService:LinkService) {
 
@@ -25,7 +24,8 @@ export class LinkFormClass {
 
   async onSubmit(linkForm:NgForm) {
     let lm: LinkModel = await this.linkService.createLink(this.linkURL);
-    linkForm.reset();
+    this.shortenedLink = lm.shortURL.toString();
+    console.log(this.shortenedLink)
   }
 
 }
